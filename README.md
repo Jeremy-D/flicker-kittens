@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Use the flicker API to make a kittens app. Project from [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/apis)
+
+
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.3.3
 
-* System dependencies
+* Rails 5
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
