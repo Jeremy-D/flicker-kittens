@@ -1,0 +1,21 @@
+
+<div class="container">
+	<div class="row">
+			<% @kittens.each do|kitten| %>
+				<ol class="clearfix">
+					<h3 class="list-group-item"><%=link_to kitten.name, kitten%></h3>
+					<li class="list-group-item">Age: <%=kitten.age%></li>
+					<li class="list-group-item">Cuteness: <%=kitten.cuteness%></li>
+					<li class="list-group-item">Softness: <%=kitten.softness%></li>
+<!-- 					<li class="list-group-item">
+						<button type="button" class="btn btn-info">
+							<%=link_to "delete", @kitten, method: :delete, data: { confirm: "You sure?" }%>
+						</button>
+					</li> -->
+				</ol>
+			<% end %> 
+	</div>
+	<div class="row">
+		<%= link_to 'New Kitten', new_kitten_path, class: 'btn btn-info' %> 
+	</div>
+</div>

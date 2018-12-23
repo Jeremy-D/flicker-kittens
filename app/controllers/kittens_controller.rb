@@ -3,47 +3,45 @@ class KittensController < ApplicationController
 		@kittens = Kitten.all
 	end
 	def new
-		@user = User.new
+		@kitten = Kitten.new
 	end
 	def show
-		@user = User.find(params[:id])
+		@kitten = Kitten.find(params[:id])
 	end
 	def create
-		@user = User.new(user_params)
-		if @user.save
+		@kitten = Kitten.new(kitten_params)
+		if @kitten.save
 			flash[:success] = "New Kitten Created!!!"
+			redirect_to root_url
 		else
 			render 'new'
 		end
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@kitten = Kitten.find(params[:id])
 	end
 
 	def update
-		@user = User.find(params[:id])
-		if @user.update_attributes(user_params)
+		@kitten = Kitten.find(params[:id])
+		if @kitten.update_attributes(kitten_params)
 			flash[:success] = "Kitten Updated!"
-			redirect_to @user
+			redirect_to @kitten
 		else
 			render 'edit'
 		end
 	end
 
 	def destroy
-		User.find(params[:id]).destroy
-		flash[:success] = "User Deleted!"
-		redirect_to users_url
+		Kitten.find(params[:id]).destroy
+		flash[:success] = "Kitten Deleted!"
+		redirect_to kittens_url
 	end
 
 	private
 
-	def user_params
+	def kitten_params
 		params.require(:kitten).permit(:name, :age, :cuteness, :softness)
 	end
-
-
-
 end
 

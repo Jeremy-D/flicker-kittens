@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<ul class="">
+					<h3 class="list-group-item"><%=link_to @kitten.name, @kitten%></h3>
+					<li class="list-group-item">How Old? <%= @kitten.age%></li>
+					<li class="list-group-item">How Cute?? <%= @kitten.cuteness%></li>
+					<li class="list-group-item">How Soft??? <%= @kitten.softness%></li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<button type="button" class="btn btn-info">
+				<%=link_to "delete", @kitten, method: :delete, data: { confirm: "You sure?" }%>
+			</button>
+			
+		</div>
+	</div>
+	
+</div>
